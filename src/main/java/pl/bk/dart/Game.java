@@ -10,11 +10,8 @@ import java.util.stream.IntStream;
 class Game {
 
     private static final int POINT_TO_REACH_TO_WIN = 0;
-
     private final static int NUMBER_OF_THROWS_IN_ROUND = 3;
-
     private final List<Player> players;
-
     private final PointAsker pointAsker;
 
     public Game(PointAsker pointAsker){
@@ -49,7 +46,6 @@ class Game {
     }
 
     private List<Player> findWinner(List<Player>players){
-
         int lowerNumberOfPoints = getLeastNumberOfPointsFromAnyPlayer(players);
         return players.stream()
                .filter(player -> player.getNumberOfPoints() == lowerNumberOfPoints)
@@ -73,7 +69,6 @@ class Game {
     }
 
     private void playPlayerRound(Player player){
-
         IntStream.range(1, NUMBER_OF_THROWS_IN_ROUND + 1)
                 .forEach(i -> {
                     log.debug("Player " + player.getName() + " is shooting. It is his "+ i +" shoot.");
